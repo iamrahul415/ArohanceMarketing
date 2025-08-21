@@ -2,7 +2,7 @@ import React from 'react'
 
 function Meet() {
   return (
-    <div>
+    <div className='pt-1 w-full h-screen bg-zinc-950'>
       
     </div>
   )

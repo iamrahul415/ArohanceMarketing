@@ -26,9 +26,9 @@ function Transforming() {
     }, []);
 
     return (
-        <div className='w-full h-screen bg-zinc-900 pt-1 relative overflow-hidden'>
+        <div className='w-full h-screen pt-10 relative overflow-hidden bg-transparent'>
             {/* Background Video */}
-            <video
+            {/* <video
                 autoPlay
                 loop
                 muted
@@ -37,7 +37,7 @@ function Transforming() {
             >
                 <source src={backgroundgif} type="video/mp4" />
                 Your browser does not support the video tag.
-            </video>
+            </video> */}
 
             {/* Animated Text Section */}
             <div
@@ -56,6 +56,7 @@ function Transforming() {
                     Tech-Powered Marketing Innovation
                 </div>
             </div>
+       
         </div>
     );
 }

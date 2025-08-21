@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaArrowRightLong } from "react-icons/fa6";
 
 function Review() {
   const customerReviews = [
@@ -17,7 +18,7 @@ function Review() {
     <div className='w-full h-screen pt-1 bg-zinc-950 flex justify-center items-center'>
       <div className='pt-12 bg-zinc-800 w-3/4 h-3/4 relative overflow-hidden'>
         {/* Header Section */}
-        <div className='ml-100 text-xl text-orange-500'>
+        <div className='ml-112 text-xl text-orange-500'>
           <p>Smiles and Stories from</p>
         </div>
         <div className='ml-72 text-8xl text-white mb-12'>Our Clients</div>
@@ -44,6 +45,19 @@ function Review() {
             </div>
           ))}
         </motion.div>
+
+        {/* More About Us Button */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <div className="group cursor-pointer w-fit border border-white divide-x divide-white flex items-center">
+            <span className="text-white px-4 py-2 text-sm font-semibold">
+              MORE ABOUT US
+            </span>
+            <span className="px-4 py-2 bg-black transition-all duration-300 transform group-hover:rotate-[315deg]">
+              <FaArrowRightLong className="text-white group-hover:text-green transition-colors duration-300" />
+            </span>
+          </div>
+        </div>
+        
       </div>
     </div>
   );
