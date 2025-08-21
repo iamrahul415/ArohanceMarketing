@@ -17,14 +17,14 @@ import Arohance from './Components/Arohance'
 
 function App() {
   return (
-    <div>
+    <div className='w-full h-screen'>
       <Navbar/>
       <HeroSection/>
       <Overview/>
       <Transforming/>
-      {/* <Aboutus/>
+      <Aboutus/>
       <Clients/>
-      <Works/>
+      {/* <Works/>
       <Ourservices/>
       <Thereismore/>
       <Meet/>

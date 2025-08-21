@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
@@ -8,7 +9,7 @@ function Navbar() {
   const socialLinks = ["INSTAGRAM", "TWITTER", "LINKEDIN", "YOUTUBE"];
 
   return (
-    <nav className="fixed z-[999] top-0 left-0 w-full h-25 flex flex-row items-center justify-between px-10 py-5 overflow-hidden">
+    <nav className="fixed z-[999] top-0 left-0 w-full h-30 flex flex-row items-center justify-between px-10 py-5 overflow-hidden">
       {/* Logo */}
       <img
         className="logo"

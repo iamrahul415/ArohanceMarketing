@@ -1,64 +1,58 @@
-import React, { useState, useEffect, useRef } from 'react';
-import zig from '../assets/textbetween.jpg';
-import backgroundgif from '../assets/backgroundvideo.mp4';
-import { motion } from 'framer-motion';
-
+import React, { useRef } from "react";
+// eslint-disable-next-line no-unused-vars
+import { motion, useScroll, useTransform } from "framer-motion";
+import zig from "../assets/textbetweenimg.png";
+import backgroundgif from "../assets/backgroundvideo.mp4";
 
 function Transforming() {
-    const [isVisible, setIsVisible] = useState(false);
-    const elementRef = useRef(null);
+  const ref = useRef(null);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (entry.isIntersecting) {
-            setIsVisible(true);
-            }
-        },
-        { threshold: 0.1 }
-        );
+  // Track scroll progress inside this section
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"], 
+  });
 
-        if (elementRef.current) observer.observe(elementRef.current);
+  // Horizontal movement: 100% (right) → -100% (left)
+  const x = useTransform(scrollYProgress, [0, 1], ["100%", "-100%"]);
 
-        return () => {
-        if (elementRef.current) observer.unobserve(elementRef.current);
-        };
-    }, []);
+  // Fade in/out effect
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
-    return (
-        <div className='w-full h-screen pt-10 relative overflow-hidden bg-transparent'>
-            {/* Background Video */}
-            {/* <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover z-0 opacity-90"
-            >
-                <source src={backgroundgif} type="video/mp4" />
-                Your browser does not support the video tag.
-            </video> */}
+  return (
+    <div
+      ref={ref}
+      className="w-full h-screen relative overflow-hidden flex justify-center items-center bg-black"
+    >
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-90 filter grayscale"
+      >
+        <source src={backgroundgif} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-            {/* Animated Text Section */}
-            <div
-                ref={elementRef}
-                className={`relative z-10 whitespace-nowrap text-4xl md:text-6xl text-white pt-40 px-20 ${
-                    isVisible ? 'animate-slideRight' : 'opacity-0'
-                }`}
-            >
-                <div className="inline-block bg-gradient-to-r from-black/60 to-transparent px-8 py-4 rounded-lg">
-                    Transforming Businesses Through 
-                    <img 
-                        src={zig} 
-                        alt="zig" 
-                        className="inline-block h-12 w-12 mx-4 align-middle animate-pulse" 
-                    />
-                    Tech-Powered Marketing Innovation
-                </div>
-            </div>
-       
-        </div>
-    );
+      {/* Animated Text Section */}
+      <motion.div
+        style={{ x, opacity }} // 👈 smooth scroll + fade
+        className="relative z-10 text-xl md:text-5xl font-black text-white whitespace-nowrap px-6"
+      >
+        <span className="inline-block bg-gradient-to-r px-6 py-3 rounded-lg">
+          Transforming Businesses Through
+          <img
+            src={zig}
+            alt="zig"
+            className="inline-block h-15 w-12 mx-4 align-middle animate-pulse"
+          />
+          Tech-Powered Marketing Innovation
+        </span>
+      </motion.div>
+    </div>
+  );
 }
 
 export default Transforming;

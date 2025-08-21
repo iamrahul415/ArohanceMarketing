@@ -59,7 +59,7 @@ function Clients() {
               <img
                 src={brand}
                 alt="Brand"
-                className="max-h-24 object-contain"
+                className="max-h-30 object-contain"
               />
             </div>
           ))}
@@ -71,7 +71,7 @@ function Clients() {
   return (
     <div className='w-full h-screen bg-zinc-950 pt-1'>
       <div 
-        className="heading text-white text-xl capitalize flex items-center justify-center mt-36 mb-24" 
+        className="heading text-white text-3xl capitalize flex items-center justify-center mt-36 mb-24" 
         style={{ fontFamily: "Roboto, sans-serif" }}
       >
         Clients and Collaborators we have worked with
