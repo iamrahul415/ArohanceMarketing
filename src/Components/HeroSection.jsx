@@ -2,16 +2,17 @@ import React, { useRef } from "react";
 import backgroundvideo from "../assets/backgroundvideo.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Overview from "./Overview";
+import Transforming from "./Transforming";
 
 function HeroSection() {
   const videoRef = useRef(null);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden text-white">
-      {/* Background video (always playing) */}
-      <video
+    <> 
+    <video
         ref={videoRef}
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10 filter grayscale"
+        className="fixed top-0 left-0 w-screen  object-cover -z-10 filter grayscale"
         autoPlay
         loop
         muted
@@ -19,6 +20,11 @@ function HeroSection() {
       >
         <source src={backgroundvideo} type="video/mp4" />
       </video>
+    
+    
+    <section className="relative h-screen w-full overflow-hidden text-white">
+      {/* Background video (always playing) */}
+     
 
       {/* Top-right: Paragraph + CTA */}
       <div className="absolute top-28 right-10 max-w-md text-right">
@@ -58,7 +64,11 @@ function HeroSection() {
           ↓ Scroll to Explore
         </p>
       </div>
+      
     </section>
+    <section className="relative h-screen w-full overflow-hidden text-white"><Overview/></section>
+    <Transforming/>
+    </>
   );
 }
 

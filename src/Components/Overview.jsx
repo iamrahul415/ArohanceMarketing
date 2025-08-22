@@ -1,6 +1,6 @@
 function Overview() {
   return (
-    <div className="h-screen flex items-center justify-center text-white">
+    <div className="h-screen flex items-center justify-center text-white ">
 
       {/* Main container */}
       <div className="max-w-6xl grid grid-cols-1 sm:grid-cols-[50%_50%] gap-6 p-6">

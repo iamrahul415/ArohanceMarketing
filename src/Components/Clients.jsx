@@ -78,7 +78,7 @@ function Clients() {
       </div>
 
       {/* Marquee Section */}
-      <div className="mt-40 space-y-40">
+      <div className="mt-40 space-y-40 mx-72">
         <MarqueeRow brands={topBrands} direction="left" />
         <MarqueeRow brands={bottomBrands} direction="right" />
       </div>

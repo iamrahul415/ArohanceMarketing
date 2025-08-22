@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, useScroll, useTransform } from "framer-motion";
 import zig from "../assets/textbetweenimg.png";
-import backgroundgif from "../assets/backgroundvideo.mp4";
+// import backgroundgif from "../assets/backgroundvideo.mp4";
 
 function Transforming() {
   const ref = useRef(null);
@@ -25,7 +25,7 @@ function Transforming() {
       className="w-full h-screen relative overflow-hidden flex justify-center items-center"
     >
       {/* Background Video */}
-      <video
+      {/* <video
         autoPlay
         loop
         muted
@@ -34,7 +34,7 @@ function Transforming() {
       >
         <source src={backgroundgif} type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
 
       {/* Animated Text Section */}
       <motion.div

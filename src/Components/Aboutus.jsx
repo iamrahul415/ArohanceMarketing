@@ -1,23 +1,27 @@
 import React, { useEffect, useState, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { ArrowRight } from "lucide-react";
 
 export default function Aboutus() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.3 }
-    );
+    const handleScroll = () => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        // Check if the top of the component is within 200px from the top of the viewport
+        setIsVisible(rect.top <= 200);
+      }
+    };
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    // Initial check
+    handleScroll();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -57,8 +61,7 @@ export default function Aboutus() {
             More about us
           </a>
           <div className="w-[50px] h-[50px] border border-white flex items-center justify-center transition-all duration-300 group-hover:bg-white">
-            <FontAwesomeIcon
-              icon={faArrowRight}
+            <ArrowRight
               className="text-white group-hover:text-black group-hover:-rotate-45 text-lg transition-all duration-300"
             />
           </div>

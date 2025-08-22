@@ -19,20 +19,20 @@ function App() {
   return (
      <div className="relative w-full min-h-screen text-white">
       {/* Background video once, fixed */}
-      <video
+      {/* <video
         autoPlay
         loop
         muted
         playsInline
-        className="fixed inset-0 w-full h-full object-cover -z-10"
+        className="absolute top-0 right-0 inset-0  object-cover -z-10"
       >
         <source src="/assets/backgroundvideo.mp4" type="video/mp4" />
-      </video>
+      </video> */}
       
       <Navbar/>
       <HeroSection/>
-      <Overview/>
-      <Transforming/>
+      
+      
       <Aboutus/>
       <Clients/>
       {/* <Works/>
