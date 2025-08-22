@@ -22,7 +22,7 @@ function Transforming() {
   return (
     <div
       ref={ref}
-      className="w-full h-screen relative overflow-hidden flex justify-center items-center bg-black"
+      className="w-full h-screen relative overflow-hidden flex justify-center items-center"
     >
       {/* Background Video */}
       <video
