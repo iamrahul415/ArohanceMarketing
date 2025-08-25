@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import React from 'react';
 
@@ -39,37 +40,44 @@ function Clients() {
   ];
 
   const MarqueeRow = ({ brands, direction = 'left' }) => {
-    const xValues = direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%'];
-    const displayBrands = direction === 'left' ? [...brands, ...brands, ...brands, ...brands, ...brands] : [...brands, ...brands, ...brands, ...brands, ...brands].slice().reverse();
-    return (
-      <div className="overflow-hidden relative w-full py-4">
-        <motion.div
-          className="flex"
-          animate={{
-            x: xValues,
-          }}
-          transition={{
-            duration: 20,
-            ease: 'linear',
-            repeat: Infinity,
-          }}
-        >
-          {displayBrands.map((brand, index) => (
-            <div key={index} className="flex-shrink-0 px-8">
-              <img
-                src={brand}
-                alt="Brand"
-                className="max-h-30 object-contain"
-              />
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    );
-  };
+  const xValues = direction === 'left' ? ['0%', '-50%'] : ['-50%', '0%'];
+  const displayBrands = direction === 'left' 
+    ? [...brands, ...brands, ...brands, ...brands, ...brands] 
+    : [...brands, ...brands, ...brands, ...brands, ...brands].slice().reverse();
 
   return (
-    <div className='w-full h-screen bg-zinc-950 pt-1'>
+    <div className="overflow-hidden relative w-full py-4">
+      <motion.div
+        className="flex"
+        animate={{ x: xValues }}
+        transition={{
+          duration: 25,
+          ease: 'linear',
+          repeat: Infinity,
+        }}
+      >
+        {displayBrands.map((brand, index) => (
+          <div key={index} className="flex-shrink-0 px-8">
+            <motion.img
+              src={brand}
+              alt="Brand"
+              className="max-h-28 object-contain transition-transform duration-300"
+              whileHover={{
+                scale: 1.2,
+                rotate: 2,
+                boxShadow: "0px 8px 25px rgba(255,165,0,0.5)",
+              }}
+            />
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
+
+  return (
+    <div className='w-full h-screen bg-black pt-1'>
       <div 
         className="heading text-white text-3xl capitalize flex items-center justify-center mt-36 mb-24" 
         style={{ fontFamily: "Roboto, sans-serif" }}

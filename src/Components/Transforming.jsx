@@ -24,18 +24,6 @@ function Transforming() {
       ref={ref}
       className="w-full h-screen relative overflow-hidden flex justify-center items-center"
     >
-      {/* Background Video */}
-      {/* <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-90 filter grayscale"
-      >
-        <source src={backgroundgif} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
-
       {/* Animated Text Section */}
       <motion.div
         style={{ x, opacity }} // 👈 smooth scroll + fade

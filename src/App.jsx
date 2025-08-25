@@ -18,27 +18,14 @@ import Arohance from './Components/Arohance'
 function App() {
   return (
      <div className="relative w-full min-h-screen text-white">
-      {/* Background video once, fixed */}
-      {/* <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 right-0 inset-0  object-cover -z-10"
-      >
-        <source src="/assets/backgroundvideo.mp4" type="video/mp4" />
-      </video> */}
-      
       <Navbar/>
       <HeroSection/>
-      
-      
       <Aboutus/>
       <Clients/>
-      {/* <Works/>
+      <Works/>
       <Ourservices/>
       <Thereismore/>
-      <Meet/>
+      {/* <Meet/>
       <More/>
       <Review/>
       <Contact/>

@@ -1,16 +1,3 @@
-// import React from 'react'
-// import workone from '../assets/Works1.jpg'
-// import worktwo from '../assets/Works2.jpg'
-// function Works() {
-//   return (
-//     <div className='w-full h-screen bg-zinc-950 pt-1 relative overflow-hidden'>
-//       <div className='heading mt-8 text-8xl text-orange-400 tracking-wide flex items-center justify-center '> Works </div>
-//     </div>
-//   )
-// }
-
-// export default Works 
-import React from 'react';
 import workone from '../assets/Works1.jpg';
 import worktwo from '../assets/Works2.jpg';
 
