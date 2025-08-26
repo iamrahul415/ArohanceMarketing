@@ -1,6 +1,6 @@
 import React from 'react'
 
-function More() {
+function MeetOtherMembers() {
   return (
     <div className='pt-1 w-full h-screen bg-zinc-950'>
       
@@ -8,4 +8,4 @@ function More() {
   )
 }
 
-export default More
+export default MeetOtherMembers;

@@ -8,12 +8,14 @@ import Clients from './Components/Clients'
 import Works from './Components/Works'
 import Ourservices from './Components/Ourservices'
 import Review from './Components/Review'
-import Thereismore from './Components/Thereismore'
-import Meet from './Components/Meet'
-import More from './Components/More'
+import Thereismore from './Components/ThereIsMore'
+import Meet from './Components/MeetOurTeam'
+import More from './Components/MeetOtherMembers'
 import Contact from './Components/Contact'
 import Last from './Components/Last'
 import Arohance from './Components/Arohance'
+import MeetOurTeam from './Components/MeetOurTeam'
+import MeetOtherMembers from './Components/MeetOtherMembers'
 
 function App() {
   return (
@@ -25,11 +27,11 @@ function App() {
       <Works/>
       <Ourservices/>
       <Thereismore/>
-      {/* <Meet/>
-      <More/>
+      <MeetOurTeam/>
+      {/* <MeetOtherMembers/> */}
       <Review/>
       <Contact/>
-      <Last/>
+      {/* <Last/>
       <Arohance/> */}
     </div>
   )
