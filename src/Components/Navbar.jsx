@@ -9,13 +9,13 @@ function Navbar() {
   const socialLinks = ["INSTAGRAM", "TWITTER", "LINKEDIN", "YOUTUBE"];
 
   return (
-    <nav className="fixed z-[999] top-0 left-0 w-full h-30 flex flex-row items-center justify-between px-10 py-5 overflow-hidden ">
+    <nav className="w-full fixed z-[999] h-20 flex flex-row items-center justify-between p-5 overflow-hidden">
       {/* Logo */}
       <img
         className="logo"
         src="https://framerusercontent.com/images/PFh1abACBOSrm0844kJTHeMtK4o.svg"
         alt="companyLogo"
-        width={184}
+        width={185}
         height={85}
       />
 

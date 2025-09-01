@@ -1,11 +1,8 @@
-import React from 'react'
-
-function MeetOtherMembers() {
+// import DomAnimation from './animation/DomAnimation';
+export default function MeetOtherMembers() {
   return (
-    <div className='pt-1 w-full h-screen bg-zinc-950'>
-      
+    <div style={{ width: '100vw', height: '100vh' , bg:'Relative'}}>
+      {/* <DomAnimation /> */}
     </div>
-  )
+  );
 }
-
-export default MeetOtherMembers;

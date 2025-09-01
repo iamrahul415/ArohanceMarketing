@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from './Components/Navbar'
 import HeroSection from './Components/HeroSection'
 import Overview from './Components/Overview'
@@ -6,33 +5,29 @@ import Transforming from './Components/Transforming'
 import Aboutus from './Components/Aboutus'
 import Clients from './Components/Clients'
 import Works from './Components/Works'
+import Work1 from './Components/Work1'
 import Ourservices from './Components/Ourservices'
 import Review from './Components/Review'
-import Thereismore from './Components/ThereIsMore'
-import Meet from './Components/MeetOurTeam'
-import More from './Components/MeetOtherMembers'
 import Contact from './Components/Contact'
-import Last from './Components/Last'
-import Arohance from './Components/Arohance'
 import MeetOurTeam from './Components/MeetOurTeam'
 import MeetOtherMembers from './Components/MeetOtherMembers'
+import Footer from './Components/Footer'
 
 function App() {
   return (
-     <div className="relative w-full min-h-screen text-white">
+     <div className="w-full min-h-screen text-white">
       <Navbar/>
       <HeroSection/>
+      <Overview />
+      <Transforming />
       <Aboutus/>
       <Clients/>
-      <Works/>
+      <Work1/>
       <Ourservices/>
-      <Thereismore/>
       <MeetOurTeam/>
-      {/* <MeetOtherMembers/> */}
       <Review/>
       <Contact/>
-      {/* <Last/>
-      <Arohance/> */}
+      <Footer/>
     </div>
   )
 }

@@ -23,7 +23,7 @@ const cardVariants = {
 
 export default function MeetOurTeam() {
   return (
-    <div className="w-full min-h-screen bg-black py-16">
+    <div className="relative w-full min-h-screen bg-black py-16">
       <h2 className="text-5xl font-sans text-center text-white mb-10">Meet Our Team</h2>
       <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
         Meet the creative minds behind Arohance Marketing Team, bringing innovation and expertise to every project.

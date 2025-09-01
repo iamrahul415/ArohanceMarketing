@@ -50,7 +50,7 @@ function ThereIsMore() {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 text-white py-20 flex items-center justify-center">
+    <div className="relative w-full min-h-screen bg-gradient-to-br bg-orange-500 text-white py-20 flex items-center justify-center">
       <div className="w-full px-10">
         {/* Section Heading */}
         <motion.div

@@ -7,6 +7,11 @@
     --framer-text-color: var(--token-c09d492a-e729-4cbb-b155-5952e8c0f0ee, #faf5ea);
   }
 
+  html, body{
+    overflow-x: hidden;
+    width: 100%;
+  }
+
 
 
   

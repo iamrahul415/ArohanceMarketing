@@ -1,54 +1,88 @@
-function Overview() {
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+
+const data = [
+  { id: 1, title: "Team Members", value: 9 },
+  { id: 2, title: "Repeatative Clients", value: 50 },
+  { id: 3, title: "Services", value: 13 },
+  { id: 4, title: "Happy Clients Served", value: 100 },
+];
+
+export default function Overview() {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const items = containerRef.current.querySelectorAll(".count-num");
+
+    items.forEach((el) => {
+      const target = +el.dataset.value;
+
+      gsap.fromTo(
+        el,
+        { innerText: 0 },
+        {
+          innerText: target,
+          duration: 4,
+          ease: "power1.out",
+          snap: { innerText: 1 },
+          onUpdate: function () {
+            el.textContent = Math.floor(el.innerText);
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
-    <div className="h-screen flex items-center justify-center text-white ">
+    <div className="relative h-auto mx-8 mt-25">
+      <div className="flex items-center justify-center text-white w-full">
+        {/* Outer blurred border wrapper */}
+        <div className="w-full border border-white/20 p-6 sm:p-10">
+          <div ref={containerRef} className="w-full grid grid-rows-2 gap-3">
+            {/* Top Row */}
+            <div className="grid grid-cols-[60%_40%] gap-3">
+              {data.slice(0, 2).map((item) => (
+                <div
+                  key={item.id}
+                  className="stat-box backdrop-blur-sm p-10 flex flex-col justify-center border border-white/20"
+                >
+                  <h3 className="text-xl text-gray-300">{item.title}</h3>
+                  <p className="text-7xl font-Clash Display flex items-baseline">
+                    <span
+                      className="count-num text-white"
+                      data-value={item.value}
+                    >
+                      0
+                    </span>
+                    <span className="text-orange-500 ml-1">+</span>
+                  </p>
+                </div>
+              ))}
+            </div>
 
-      {/* Main container */}
-      <div className="max-w-6xl grid grid-cols-1 sm:grid-cols-[50%_50%] gap-6 p-6">
-        
-        {/* Box 1 */}
-        <div className="border border-gray-500/30 bg-white/10 backdrop-blur-md p-10 flex flex-col justify-center items-center text-center rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-gray-500/30">
-          <h3 className="text-2xl mb-2">Team Members</h3>
-          <div className="w-40 h-0.5 border-b-4 mt-2 border-gray-200"></div>
-          <p className="text-9xl font-semibold">
-            9<span className="text-orange-500">+</span>
-          </p>
-        </div>
-
-        {/* Box 2 */}
-        <div className="border border-gray-500/30 bg-white/10 backdrop-blur-md p-10 flex flex-col justify-center items-center text-center rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-gray-500/30">
-          <h3 className="text-2xl mb-2">Repetitive Clients</h3>
-          <div className="w-45 h-0.5 border-b-4 mt-2 border-gray-200"></div>
-          <p className="text-9xl font-semibold">
-            50<span className="text-orange-500">+</span>
-          </p>
-        </div>
-      </div>
-
-      {/* Second row */}
-      <div className="max-w-6xl grid grid-cols-1 sm:grid-cols-[50%_50%] gap-6 p-6">
-        {/* Box 3 */}
-        <div className="border border-gray-500/30 bg-white/10 backdrop-blur-md p-10 flex flex-col justify-center items-center text-center rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-gray-500/30">
-          <h3 className="text-2xl mb-2">Services</h3>
-          <div className="w-25 h-0.5 border-b-4 mt-2 border-gray-200"></div>
-          <p className="text-9xl font-semibold">
-            13<span className="text-orange-500">+</span>
-          </p>
-        </div>
-
-        {/* Box 4 */}
-        <div className="border border-gray-500/30 bg-white/10 backdrop-blur-md p-10 flex flex-col justify-center items-center text-center rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-gray-500/30">
-          <h3 className="text-2xl mb-2">Happy Clients Served</h3>
-          <div className="w-55 h-0.5 border-b-4 mt-2 border-gray-200"></div>
-          <p className="text-9xl font-semibold">
-            100<span className="text-orange-500">+</span>
-          </p>
+            {/* Bottom Row */}
+            <div className="grid grid-cols-[40%_60%] gap-3">
+              {data.slice(2).map((item) => (
+                <div
+                  key={item.id}
+                  className="stat-box backdrop-blur-sm p-10 flex flex-col justify-center border border-white/20"
+                >
+                  <h3 className="text-xl text-gray-300">{item.title}</h3>
+                  <p className="text-7xl font-Clash Display flex items-baseline">
+                    <span
+                      className="count-num text-white"
+                      data-value={item.value}
+                    >
+                      0
+                    </span>
+                    <span className="text-orange-500 ml-1">+</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
-export default Overview;
-
-
-
